@@ -13,6 +13,9 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/dbext.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'arcticicestudio/nord-vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -56,6 +59,19 @@ let g:ycm_complete_in_comments = 1
 " 在字符串输入中也能补全
 let g:ycm_complete_in_strings = 1
 
+
+let g:tagbar_ctags_bin='ctags'     "ctags 程序的路径
+let g:tagbar_width=35              "窗口宽度设置为 30
+let g:tagbar_right=1                "设置在 vim 右边显示
+" 如果是 C 语言的程序的话，tagbar 自动开启
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
+" 我设置 F2 为打开或者关闭的快捷键，根据你的习惯更改
+nnoremap <silent> <F2> :TagbarToggle<CR>"
+" autocmd VimEnter * nested TagbarOpen
+let g:tagbar_map_openfold = "zv"
+
+
+colorscheme nord
 
 
 let g:syntastic_error_symbol='>>'
