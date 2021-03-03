@@ -61,7 +61,7 @@ let g:ycm_complete_in_strings = 1
 
 
 let g:tagbar_ctags_bin='ctags'     "ctags 程序的路径
-let g:tagbar_width=35              "窗口宽度设置为 30
+let g:tagbar_width=35              "窗口宽度设置为 35
 let g:tagbar_right=1                "设置在 vim 右边显示
 " 如果是 C 语言的程序的话，tagbar 自动开启
 autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
