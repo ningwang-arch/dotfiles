@@ -1,0 +1,61 @@
+[options]
+resize_grip=true
+scroll_on_output=false
+scroll_on_keystroke=true
+audible_bell=false
+visible_bell=true
+mouse_autohide=true
+allow_bold=true
+dynamic_title=true
+urgent_on_bell=true
+clickable_url=true
+font=Source Code Pro 11
+scrollback_lines=65536
+search_wrap=true
+#icon_name=terminal
+#geometry=640x480
+#"system","on"or"off"
+cursor_blink=system
+cursor_shape=block
+
+[colors]
+
+#special
+foreground=#FFFFFF
+foreground_bold=#171717
+cursor=rgba(255,255,255,0.3)
+background=rgba(0,0,0,0.75)
+
+# Black
+	color0=#000000
+# Maroon
+	color1=#D00308
+# Green
+	color2=#24721f
+# Olive
+	color3=#C18001
+# Navy
+	color4=#283dAA
+# Purple
+	color5=#CA3153
+# Teal
+	color6=#005555
+# Silver
+	color7=#FFFFFF
+# Grey
+	color8=#000000
+# Red
+	color9=#D00308
+# Lime
+	color10=#24721f
+# Yellow
+	color11=#C18001
+# Blue
+	color12=#283dAA
+# Fuchsia
+	color13=#CA3153
+# Aqua
+	color14=#005555
+# White
+	color15=#FFFFFF
+
