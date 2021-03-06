@@ -62,7 +62,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-modules-left =left i3 right mpd
+modules-left =left i3 right 
 modules-center = date
 modules-right = netspeed memory cpu battery line xbacklight pulseaudio headphone
 overline-size = 6
