@@ -108,6 +108,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -columns 1"
 
 # Others
 for_window [class="feh"] floating enable
+for_window [class="Spotify"] floating enable
 
 ##########################
 #
