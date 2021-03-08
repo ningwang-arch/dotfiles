@@ -94,7 +94,7 @@ element normal.urgent {
 }
 
 element normal.active {
-	background-color: @active-background;
+	//background-color: @active-background;
 	text-color:       @active-foreground;
 }
 
