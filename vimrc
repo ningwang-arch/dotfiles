@@ -15,6 +15,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'rakr/vim-one'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -71,8 +73,7 @@ nnoremap <silent> <F2> :TagbarToggle<CR>"
 let g:tagbar_map_openfold = "zv"
 
 
-colorscheme nord
-
+colorscheme onedark
 
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
