@@ -73,7 +73,7 @@ underline-color=${colors.xbs}
 tray-maxsize = 22
 tray-padding = 6
 tray-position = right
-#tray-background = ${colors.xbg2}
+tray-background = ${colors.xbg2}
 
 enable-ipc = true
 border-color =${colors.xbg}
