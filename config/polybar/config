@@ -62,7 +62,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-modules-left =left i3 right 
+modules-left =left i3 right mpd 
 modules-center = date
 modules-right = netspeed memory cpu battery line xbacklight pulseaudio headphone
 overline-size = 6
@@ -276,9 +276,10 @@ label-empty = %icon%
 label-empty-foreground = #44ffffff
 label-empty-padding = 4
 
+
 [module/mpd]
 type = internal/mpd
-format-online =" <toggle> <icon-single> <icon-next>  "
+format-online =" <toggle> <icon-single> <icon-next>  "  
 format-online-background = ${colors.xbg2}
 icon-prev = "􀊍"
 icon-stop = "􀑋"
@@ -293,10 +294,10 @@ toggle-on-foreground = #ff
 toggle-off-foreground = #55
 [module/mpdvol]
 type = custom/script
-exec = mpc volume|cut -f2 -d":"
+exec = mpc  volume|cut -f2 -d":"
 exec-if = pgrep mpd
-click-left = mpc volume +5
-click-right = mpc volume -5
+click-left = mpc  volume +5
+click-right = mpc  volume -5
 interval = 3
 format-background = ${colors.xbg2}
 format-padding= ${variables.mpadding}

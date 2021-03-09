@@ -110,6 +110,14 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -columns 1"
 for_window [class="feh"] floating enable
 for_window [class="Spotify"] floating enable
 
+# keymap for spotify
+bindsym $mod+n exec --no-startup-id "playerctl next"
+bindsym $mod+p exec --no-startup-id "playerctl previous"
+bindsym $mod+s exec --no-startup-id "playerctl play-pause"
+
+
+
+
 ##########################
 #
 #    i3 behaviour
