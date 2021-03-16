@@ -299,8 +299,8 @@ mode "resize" {
 #
 ##########################
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 5
+gaps inner 7
+gaps outer 2
 
 # 设置圆角
 # border_radius 8
