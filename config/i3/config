@@ -204,7 +204,7 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # hide/unhide status bar
-bindsym $mod+h exec polybar-msg cmd toggle
+# bindsym $mod+h exec polybar-msg cmd toggle
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
