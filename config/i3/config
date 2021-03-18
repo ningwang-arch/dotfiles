@@ -59,14 +59,13 @@ bindsym $mod+l exec --no-startup-id "~/.scripts/lock"
 
 
 # Sound-section controls
-bindsym $mod+F1 exec "~/.scripts/ctrl_volume mute"
-bindsym $mod+F3 exec "~/.scripts/ctrl_volume up"
-bindsym $mod+F2 exec "~/.scripts/ctrl_volume down"
+bindsym XF86AudioMute  exec "~/.scripts/ctrl_volume mute"
+bindsym XF86AudioRaiseVolume exec "~/.scripts/ctrl_volume up"
+bindsym XF86AudioLowerVolume exec "~/.scripts/ctrl_volume down"
 
 # Screen brightness controls
-bindsym $mod+F11 exec "~/.scripts/ctrl_light down"
-bindsym $mod+F12 exec "~/.scripts/ctrl_light up"
-bindsym $mod+F7 exec "~/.scripts/ctrl_light toggle"
+bindsym XF86MonBrightnessDown exec "~/.scripts/ctrl_light down"
+bindsym XF86MonBrightnessUp exec "~/.scripts/ctrl_light up"
 
 
 # 无操作十分钟锁屏
@@ -79,23 +78,15 @@ exec --no-startup-id "~/.scripts/lightsOn.sh"
 #
 ##########################
 # Start applications
-# bindsym $mod+Return exec alacritty
 bindsym $mod+Return exec alacritty
 bindsym $mod+t exec alacritty
 # Assign applications on specific workspaces
 # assign [class="Emacs"] $ws1
-# assign [class="(F|f)irefox"] $ws2
-# assign [class="Google-chrome"] $ws2
-# assign [class="(q|Q)utebrowser"] $ws2
-# assign [class="Alacritty"] $ws3
-# assign [class="Gimp"] $ws6
-# assign [class="Inkscape"] $ws6
-# assign [class="Virt-manager"] $ws7
-# assign [class="Virt-viewer"] $ws7
 
 # Autostart applications
 exec --no-startup-id "picom --experimental-backends"
 exec --no-startup-id fcitx
+exec --no-startup-id copyq
 exec --no-startup-id dunst
 exec_always  --no-startup-id "~/.config/polybar/launch.sh"
 exec --no-startup-id nm-applet
@@ -109,6 +100,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -columns 1"
 # Others
 for_window [class="feh"] floating enable
 for_window [class="Spotify"] floating enable
+for_window [class="copyq"] floating enable
 
 # keymap for spotify
 bindsym $mod+n exec --no-startup-id "playerctl next"
@@ -212,9 +204,7 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # hide/unhide status bar
-bindsym $mod+m bar mode toggle
-
-# bindsym $mod+m exec polybar-msg cmd toggle
+bindsym $mod+h exec polybar-msg cmd toggle
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
