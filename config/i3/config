@@ -39,7 +39,7 @@ for_window [class=".*"] title_format "%title"
 client.focused     #ECECEC      #414941     #FAFAFA    #ECECEC       #ECECEC
 client.focused_inactive   #ECECEC     #ECECEC    #171717     #ECECEC       #ECECEC
 client.unfocused   #ECECEC      #CACACA    #171717     #ECECEC       #ECECEC
-client.urgent           #ff0000            #ff0000        #ffffff        #268BD2
+client.urgent           #ffffff            #ffffff        #ffffff        #268BD2
 client.placeholder      #000000            #909090        #FFFFFF        #268BD2
 
 
@@ -101,6 +101,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -columns 1"
 for_window [class="feh"] floating enable
 for_window [class="Spotify"] floating enable
 for_window [class="copyq"] floating enable
+for_window [class="SpeedCrunch"] floating enable
 
 # keymap for spotify
 bindsym $mod+n exec --no-startup-id "playerctl next"
