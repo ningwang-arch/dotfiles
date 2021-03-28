@@ -18,5 +18,5 @@ export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S"
 
 # alias google-chrome-stable='google-chrome-stable --proxy-server="http://127.0.0.1:8889"'
 
-alias proxy_up='export all_proxy=http://127.0.0.1:8889'
-alias proxy_down='unset all_proxy'
+alias proxy_up="export ALL_PROXY=http://127.0.0.1:8889"
+alias proxy_down="unset ALL_PROXY"
