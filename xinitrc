@@ -19,5 +19,7 @@ xcompmgr &
 # 控制终端透明
 # picom -b &
 
+qv2ray &
+
 # 启动i3
 exec i3
