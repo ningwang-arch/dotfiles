@@ -17,6 +17,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'rakr/vim-one'
 Plugin 'joshdick/onedark.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 filetype plugin indent on
@@ -85,6 +86,13 @@ let g:syntastic_python_checkers=['pyflakes']
 
 
 let g:omni_sql_default_compl_type='syntax'
+
+
+
+" config about devicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+
 
 
 map<F3> :NERDTreeToggle<CR>
