@@ -102,6 +102,8 @@ for_window [class="feh"] floating enable
 for_window [class="Spotify"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="SpeedCrunch"] floating enable
+for_window [class="ark"] floating enable
+
 
 # keymap for spotify
 bindsym $mod+n exec --no-startup-id "playerctl next"
