@@ -87,6 +87,7 @@ bindsym $mod+t exec alacritty
 exec --no-startup-id "picom --experimental-backends"
 exec --no-startup-id fcitx
 exec --no-startup-id copyq
+exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id dunst
 exec_always  --no-startup-id "~/.config/polybar/launch.sh"
 exec --no-startup-id nm-applet
