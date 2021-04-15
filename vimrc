@@ -14,8 +14,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'rakr/vim-one'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ryanoasis/vim-devicons'
 
@@ -93,6 +91,7 @@ let g:omni_sql_default_compl_type='syntax'
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 
+autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
 
 
 map<F3> :NERDTreeToggle<CR>
