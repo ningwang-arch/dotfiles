@@ -6,7 +6,7 @@ configuration {
 	font: "SFNS Display 10";
 	show-icons: true;
 	icon-theme: "papirus";
-	theme: "~/.config/rofi/sidetab.rasi";
+	theme: "~/.config/rofi/slate.rasi";
 	display-drun: "App";
 									
 }
