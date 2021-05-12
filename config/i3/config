@@ -91,7 +91,8 @@ exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id dunst
 exec_always  --no-startup-id "~/.config/polybar/launch.sh"
 exec --no-startup-id nm-applet
-
+exec --no-startup-id flameshot
+exec --no-startup-id "~/.scripts/setWallpaper"
 exec --no-startup-id xset dpms 300
 # Specific applications configration
 

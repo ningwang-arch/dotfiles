@@ -320,7 +320,7 @@ code,
 kbd,
 tt,
 var {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
