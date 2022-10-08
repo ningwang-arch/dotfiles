@@ -35,7 +35,7 @@ M.setup = function()
     -- format on save
     on_attach = function(client)
       if client.server_capabilities.documentFormattingProvider then
-        vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
+        vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async = true})"
       end
     end,
   }
