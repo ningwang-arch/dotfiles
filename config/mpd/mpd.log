@@ -1,0 +1,73 @@
+Oct 09 22:39 : update: added /Señorita.flac
+Oct 09 22:39 : update: added /Lily.mp3
+Oct 09 22:39 : update: added /Wonderful U.flac
+Oct 09 22:39 : update: added /Young And Beautiful.flac
+Oct 09 22:39 : update: added /Lullaby.flac
+Oct 09 22:39 : update: added /王菲 - 如愿.flac
+Oct 09 22:45 : player: played "Wonderful U.flac"
+Oct 09 23:02 : player: played "Lily.mp3"
+Oct 10 14:06 : player: played "Lily.mp3"
+Oct 10 22:56 : player: played "Lily.mp3"
+Oct 11 23:00 : player: played "Lily.mp3"
+Oct 12 12:36 : player: played "Lily.mp3"
+Oct 12 15:15 : player: played "Lily.mp3"
+Oct 12 22:23 : update: added /Scarborough Fair.mp3
+Oct 12 22:50 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 12 22:50 : player: played "王菲 - 如愿.flac"
+Oct 12 22:55 : player: played "Scarborough Fair.mp3"
+Oct 12 22:55 : player: played "Scarborough Fair.mp3"
+Oct 12 22:56 : player: played "Scarborough Fair.mp3"
+Oct 12 22:56 : exception: Playlist already exists
+Oct 12 23:00 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 12 23:00 : player: played "王菲 - 如愿.flac"
+Oct 12 23:01 : output: Failed to play on "My Pulse Output" (pulse): disconnected
+Oct 12 23:01 : player: played "Señorita.flac"
+Oct 13 09:40 : output: Failed to play on "My Pulse Output" (pulse): failed to connect the stream: Input/Output error
+Oct 13 09:42 : player: played "Señorita.flac"
+Oct 13 09:45 : player: played "Lullaby.flac"
+Oct 13 09:49 : player: played "Scarborough Fair.mp3"
+Oct 13 09:53 : player: played "Wonderful U.flac"
+Oct 13 09:57 : player: played "Lily.mp3"
+Oct 13 10:01 : player: played "Young And Beautiful.flac"
+Oct 14 23:13 : player: played "Lily.mp3"
+Oct 15 09:42 : player: played "Wonderful U.flac"
+Oct 15 09:45 : player: played "Lily.mp3"
+Oct 15 09:50 : player: played "Young And Beautiful.flac"
+Oct 15 09:56 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 15 09:56 : player: played "王菲 - 如愿.flac"
+Oct 15 10:00 : player: played "Señorita.flac"
+Oct 15 10:01 : player: played "Lullaby.flac"
+Oct 15 10:06 : player: played "Wonderful U.flac"
+Oct 15 10:10 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 15 10:10 : player: played "王菲 - 如愿.flac"
+Oct 15 10:14 : player: played "Señorita.flac"
+Oct 15 10:16 : player: played "Lullaby.flac"
+Oct 15 10:20 : player: played "Scarborough Fair.mp3"
+Oct 15 10:24 : player: played "Lily.mp3"
+Oct 15 10:28 : player: played "Young And Beautiful.flac"
+Oct 15 10:29 : player: played "Wonderful U.flac"
+Oct 15 10:30 : player: played "Wonderful U.flac"
+Oct 15 10:34 : player: played "Wonderful U.flac"
+Oct 15 10:38 : player: played "Lily.mp3"
+Oct 15 10:42 : player: played "Young And Beautiful.flac"
+Oct 15 10:46 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 15 10:46 : player: played "王菲 - 如愿.flac"
+Oct 15 10:49 : player: played "Señorita.flac"
+Oct 15 10:52 : player: played "Lullaby.flac"
+Oct 15 10:56 : player: played "Scarborough Fair.mp3"
+Oct 15 11:01 : player: played "Wonderful U.flac"
+Oct 15 11:04 : player: played "Lily.mp3"
+Oct 15 11:08 : player: played "Young And Beautiful.flac"
+Oct 15 11:12 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 15 11:12 : player: played "王菲 - 如愿.flac"
+Oct 15 11:15 : player: played "Señorita.flac"
+Oct 15 11:18 : player: played "Lullaby.flac"
+Oct 15 11:22 : player: played "Scarborough Fair.mp3"
+Oct 15 11:27 : player: played "Wonderful U.flac"
+Oct 15 11:32 : player: played "Lily.mp3"
+Oct 15 11:36 : player: played "Young And Beautiful.flac"
+Oct 15 11:40 : flac: FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC
+Oct 15 11:40 : player: played "王菲 - 如愿.flac"
+Oct 15 11:43 : player: played "Señorita.flac"
+Oct 15 11:46 : player: played "Lullaby.flac"
+Oct 15 11:50 : player: played "Scarborough Fair.mp3"

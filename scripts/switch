@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+if [ $1 == "l" ]; then
+	cp ~/.onehalflight ~/.Xresources
+	xrdb merge ~/.Xresources && kill -USR1 $(pidof st)
+	pkill -1 dwm
+	# Global theme
+	sed -i "s/WhiteSur-Dark-nord/WhiteSur-Light-nord/g" ~/.gtkrc-2.0
+	sed -i "s/WhiteSur-Dark-nord/WhiteSur-Light-nord/g" ~/.config/gtk-3.0/settings.ini
+	# Rofi
+	sed -i "s/dark/light/g" ~/.config/rofi/config.rasi
+	# Nvim
+	sed -i "s/onedark/one_light/g" ~/.config/nvim/lua/custom/chadrc.lua
+	# Code
+	sed -i "s/Ayu Mirage/Eva Light/g" ~/.config/Code/User/settings.json
+	# Alacritty
+	cp ~/.config/alacritty/one-half-light.yml ~/.config/alacritty/alacritty.yml
+	# Zathura
+	cp ~/.config/zathura/zathurarc-nord-light ~/.config/zathura/zathurarc
+	# WallPaper
+	cp ~/Pictures/WallPaper/13.png ~/Pictures/WallPaper/bg_file && sh ~/.local/bin/setWallpaper
+	# dunst
+	cp ~/.config/dunst/dunstrc-nord-light ~/.config/dunst/dunstrc
+	pkill dunst
+	notify-send "Light Mode" -i ~/.icons/nord.svg -t 3000
+elif [ $1 == "d" ]; then
+	cp ~/.nord ~/.Xresources
+	xrdb merge ~/.Xresources && kill -USR1 $(pidof st)
+	pkill -1 dwm
+	# Global theme
+	sed -i "s/WhiteSur-Light-nord/WhiteSur-Dark-nord/g" ~/.gtkrc-2.0
+	sed -i "s/WhiteSur-Light-nord/WhiteSur-Dark-nord/g" ~/.config/gtk-3.0/settings.ini
+	# Rofi
+	sed -i "s/light/dark/g" ~/.config/rofi/config.rasi
+	# Nvim
+	sed -i "s/one_light/onedark/g" ~/.config/nvim/lua/custom/chadrc.lua
+	# Code
+	sed -i "s/Eva Light/Ayu Mirage/g" ~/.config/Code/User/settings.json
+	# Alacritty
+	cp ~/.config/alacritty/nord.yml ~/.config/alacritty/alacritty.yml
+	# Zathura
+	cp ~/.config/zathura/zathurarc-nord-dark ~/.config/zathura/zathurarc
+	# WallPaper
+	cp ~/Pictures/WallPaper/9.jpg ~/Pictures/WallPaper/bg_file && sh ~/.local/bin/setWallpaper
+	# dunst
+	cp ~/.config/dunst/dunstrc-nord-dark ~/.config/dunst/dunstrc
+	pkill dunst
+	notify-send "Dark Mode" -i ~/.icons/nord.svg -t 3000
+
+fi

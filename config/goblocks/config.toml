@@ -1,0 +1,15 @@
+[networks]
+wlan = "wlan0"
+
+
+[color]
+# background or foreground
+style = "foreground"
+
+netColor = "#d08070"
+cpuColor = "#ebcb8b"
+memColor = "#a3be8c"
+volColor = "#5e81ac"
+ligColor = "#9966cc"
+batColor = "#88c0d0"
+datColor = "#b48ead"

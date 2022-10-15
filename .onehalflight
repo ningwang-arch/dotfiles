@@ -1,0 +1,57 @@
+!-- Xft settings -- !
+Xft.dpi: 100
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+ 
+
+st.alpha: 0.60
+st.termname: st-256color
+
+*.foreground:   #383a42
+#ifdef background_opacity
+*.background:   [background_opacity]#fafafa
+#else
+*.background:   #fafafa
+#endif
+*.cursorColor:  #bfceff
+
+*.color0:       #383a42
+*.color1:       #e45649
+*.color2:       #50a14f
+*.color3:       #c18401
+*.color4:       #0184bc
+*.color5:       #a626a4
+*.color6:       #0997b3
+*.color7:       #fafafa
+
+*.color8:       #383a42 
+*.color9:       #e45649 
+*.color10:      #50a14f 
+*.color11:      #c18401 
+*.color12:      #0184bc 
+*.color13:      #a626a4 
+*.color14:      #0997b3 
+*.color15:      #fafafa 
+
+dwm.normbgcolor: #FAFAFA
+dwm.normbordercolor: #FAFAFA
+dwm.normfgcolor: #2E3440
+dwm.selfgcolor: #FAFAFA
+dwm.selbordercolor: #B48EAD
+dwm.selbgcolor: #81A1C1
+
+dmenu.background: #FAFAFA
+dmenu.foreground: #2E3440
+dmenu.selforeground: #FAFAFA
+dmenu.selbackground: #81A1C1
+
+xmenu.background: #FAFAFA
+xmenu.foreground: #2E3440
+xmenu.selforeground: #FAFAFA
+xmenu.selbackground: #81A1C1
+

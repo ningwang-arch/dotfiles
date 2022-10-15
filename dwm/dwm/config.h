@@ -6,7 +6,6 @@
 static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int gappx = 0;
 static const unsigned int snap = 30;                            /* snap pixel */
-static const int scalepreview = 3;                              /* tag preview scaling */
 static const char panel[][20] = {"xfce4-panel", "Xfce4-panel"}; /* name & cls of panel win */
 static const unsigned int gappih = 0; /* horiz inner gap between windows */
 static const unsigned int gappiv = 0; /* vert inner gap between windows */
@@ -21,9 +20,11 @@ static const unsigned int systrayspacing = 2; /* systray spacing */
 static const int systraypinningfailfirst =
     1; /* 1: if pinning fails, display systray on the first monitor, False: display systray on the
           last monitor*/
-static const int showsystray = 0;             /* 0 means no systray */
-static const int showbar = 1;                 /* 0 means no bar */
-static const int topbar = 1;                  /* 0 means bottom bar */
+static const int showsystray = 0;    /* 0 means no systray */
+static const int showbar = 1;        /* 0 means no bar */
+static const int topbar = 1;         /* 0 means bottom bar */
+static const Bool viewontag = False; /* Switch view on tag switch */
+static const char buttonbar[] = "";
 static const int user_bh = 20;                /* 0 means that dwm will calculate bar height, >=
                                                  1 means dwm will user_bh as bar height */
 static const int enable_autostart_script = 1; /*0 means disable autostart, 1 means enable*/
@@ -164,6 +165,7 @@ static const char* dmenucmd[] = {"dmenu_run", "-fn", dmenufont, topbar ? NULL : 
 
 static const char* file[] = {"nemo", NULL};
 
+static const char* xmenucmd[] = {"~/.local/bin/xmenu.sh", NULL};
 
 static const char* lockscreen[] = {"lock", NULL};
 
@@ -185,7 +187,7 @@ static const char* browser[] = {"google-chrome-stable", NULL};
 static const char* translate[] = {"dmenu-translate", NULL};
 
 static const char* clip[] = {"clipmenu", NULL};
-
+static const char* layoutmenu_cmd = "/home/eclipse/.local/bin/layoutmenu.sh";
 static const Key keys[] = {
     /* modifier                     key             function        argument */
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
@@ -273,8 +275,10 @@ static const Button buttons[] = {
 
     /* click                event mask      button          function argument
      */
+    {ClkButton, 0, Button1, spawn, SHCMD("~/.local/bin/xmenu.sh")},
     {ClkLtSymbol, 0, Button1, setlayout, {0}},
-    {ClkLtSymbol, 0, Button3, setlayout, {.v = &layouts[4]}},
+    {ClkLtSymbol, 0, Button3, layoutmenu, {0}},
+    {ClkRootWin, 0, Button3, spawn, SHCMD("~/.local/bin/xmenu.sh")},
     // {ClkWinTitle, 0, Button1, togglewin, {0}},
     // {ClkWinTitle, 0, Button2, zoom, {0}},
     {ClkStatusText, 0, Button2, spawn, {.v = termcmd}},

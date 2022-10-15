@@ -1,12 +1,11 @@
 configuration {
-	modi: "window,ssh,drun";
-	width: 800;
-	lines: 10;
-	columns: 2;
-	font: "SFNS Display 10";
+  modi: "window,combi,ssh,drun,run,windowcd,keys";
+	font: "Fira Code Nerd Font 16";
 	show-icons: true;
-	icon-theme: "papirus";
-	theme: "~/.config/rofi/slate.rasi";
+	icon-theme: "Papirus";
 	display-drun: "App";
-									
 }
+@theme "nord-light"
+
+
+
