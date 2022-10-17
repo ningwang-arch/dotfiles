@@ -1181,7 +1181,7 @@ int drawstatusbar(Monitor* m, int bh, char* stext) {
 void drawbar(Monitor* m) {
     int x, w, tw = 0, n = 0, stw = 0;
     unsigned int i, occ = 0, urg = 0;
-    int boxw = drw->fonts->h / 6 + 1;
+    // int boxw = drw->fonts->h / 6 + 1;
     Client* c;
     if (!m->showbar) return;
 
@@ -1453,7 +1453,7 @@ void focusstackhid(const Arg* arg) {
 void focusstack(int inc, int hid) {
     Client *c = NULL, *i;
 
-    if (!selmon->sel || selmon->sel->isfullscreen && lockfullscreen && !hid) return;
+    if (!selmon->sel || (selmon->sel->isfullscreen && lockfullscreen && !hid)) return;
     if (!selmon->clients) return;
 
     if (inc > 0) {

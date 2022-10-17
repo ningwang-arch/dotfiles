@@ -165,12 +165,12 @@ static const char* dmenucmd[] = {"dmenu_run", "-fn", dmenufont, topbar ? NULL : 
 
 static const char* file[] = {"nemo", NULL};
 
-static const char* xmenucmd[] = {"~/.local/bin/xmenu.sh", NULL};
-
-static const char* lockscreen[] = {"lock", NULL};
+static const char* lock[] = {"betterlockscreen", "-l", NULL};
 
 static const char* screenshot[] = {"flameshot", "gui", NULL};
-static const char* fullshot[] = {"~/.local/bin/screenshot", NULL};
+
+static const char* fullshot[] = {
+    "flameshot", "full", "-p", "/home/eclipse/Pictures/Screenshots/", NULL};
 
 static const char scratchpadname[] = "scratchpad";
 static const char* scratchpadcmd[] = {"st", "-t", scratchpadname, "-g", "80x24", NULL};
@@ -187,7 +187,7 @@ static const char* browser[] = {"google-chrome-stable", NULL};
 static const char* translate[] = {"dmenu-translate", NULL};
 
 static const char* clip[] = {"clipmenu", NULL};
-static const char* layoutmenu_cmd = "/home/eclipse/.local/bin/layoutmenu.sh";
+static const char* layoutmenu_cmd = "~/.local/bin/layoutmenu.sh";
 static const Key keys[] = {
     /* modifier                     key             function        argument */
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
@@ -195,7 +195,7 @@ static const Key keys[] = {
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_p, spawn, {.v = rofidruncmd}},
     {MODKEY, XK_Print, spawn, {.v = screenshot}},
-    {0, XK_Print, spawn, SHCMD("~/.local/bin/screenshot")},
+    {0, XK_Print, spawn, {.v = fullshot}},
     {MODKEY, XK_minus, scratchpad_show, {0}},
     {MODKEY | ShiftMask, XK_minus, scratchpad_hide, {0}},
     {MODKEY, XK_equal, scratchpad_remove, {0}},
@@ -206,7 +206,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_t, spawn, {.v = translate}},
     {MODKEY, XK_v, spawn, {.v = clip}},
     {MODKEY, XK_e, spawn, {.v = file}},
-    {MODKEY, XK_l, spawn, SHCMD("~/.local/bin/lock")},
+    {MODKEY, XK_l, spawn, {.v = lock}},
     {MODKEY | ShiftMask, XK_g, spawn, {.v = browser}},
 
     {MODKEY, XK_s, show, {0}},
@@ -223,8 +223,8 @@ static const Key keys[] = {
     {MODKEY | ControlMask, XK_Return, zoom, {0}},
 
     /* Switch dark and light */
-    {MODKEY | ShiftMask, XK_l, spawn, CMD("sh ~/.local/bin/switch l")},
-    {MODKEY | ShiftMask, XK_d, spawn, CMD("sh ~/.local/bin/switch d")},
+    {MODKEY | ShiftMask, XK_l, spawn, CMD("~/.local/bin/switch l")},
+    {MODKEY | ShiftMask, XK_d, spawn, CMD("~/.local/bin/switch d")},
 
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY, XK_q, killclient, {0}},
