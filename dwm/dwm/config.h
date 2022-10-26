@@ -7,10 +7,10 @@ static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int gappx = 0;
 static const unsigned int snap = 30;                            /* snap pixel */
 static const char panel[][20] = {"xfce4-panel", "Xfce4-panel"}; /* name & cls of panel win */
-static const unsigned int gappih = 0; /* horiz inner gap between windows */
-static const unsigned int gappiv = 0; /* vert inner gap between windows */
-static const unsigned int gappoh = 0; /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov = 0; /* vert outer gap between windows and screen edge */
+static const unsigned int gappih = 1; /* horiz inner gap between windows */
+static const unsigned int gappiv = 1; /* vert inner gap between windows */
+static const unsigned int gappoh = 1; /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov = 1; /* vert outer gap between windows and screen edge */
 static const int smartgaps = 1;       /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning =
     0; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -41,8 +41,8 @@ enum showtab_modes
 static const int showtab = showtab_auto; /* Default tab bar show mode */
 static const int toptab = False;         /* False means bottom tab bar */
 
-static const char* fonts[] = {"Fira Code Nerd Font Mono:size=10"};
-static const char dmenufont[] = "Fira Code Nerd Font Mono:size=10";
+static const char* fonts[] = {"FiraCode Nerd Font Mono:size=10"};
+static const char dmenufont[] = "FiraCode Nerd Font Mono:size=10";
 static char normbgcolor[] = "#2E3440";
 static char normbordercolor[] = "#3B4252";
 static char normfgcolor[] = "#ECEFF4";
@@ -96,6 +96,15 @@ static char* colors[][3] = {
 static const char* tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 // static const char *tags[] = {"", "", "", "", "", "", "", "", ""};
 // static const char* tags[] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
+//
+
+static const unsigned int ulinepad = 5;    /* horizontal padding between the underline and tag */
+static const unsigned int ulinestroke = 3; /* thickness / height of the underline */
+static const unsigned int ulinevoffset =
+    0;                         /* how far above the bottom of the bar the line should appear */
+static const int ulineall = 0; /* 1 to show underline on all tags, 0 for just the active ones */
+
+
 static const Rule rules[] = {
     /* xprop(1):
      *	WM_CLASS(STRING) = instance, class
@@ -216,9 +225,6 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_j, shiftviewclients, {.i = -1}},
     {MODKEY | ShiftMask, XK_k, shiftviewclients, {.i = +1}},
 
-    //	{ MODKEY,                       XK_i,           incnmaster,     {.i = +1
-    //} }, 	{ MODKEY,                       XK_o,           incnmaster, {.i
-    //= -1 } },
 
     {MODKEY | ControlMask, XK_Return, zoom, {0}},
 

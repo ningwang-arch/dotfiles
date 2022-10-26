@@ -1203,6 +1203,8 @@ void drawbar(Monitor* m) {
     w = TEXTW(buttonbar);
     drw_setscheme(drw, scheme[SchemeNorm]);
     x = drw_text(drw, x, 0, w, bh, lrpad / 2, buttonbar, 0);
+
+
     for (i = 0; i < LENGTH(tags); i++) {
         /* do not draw vacant tags */
         if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i)) continue;
@@ -1211,6 +1213,16 @@ void drawbar(Monitor* m) {
         // w = bh;
         drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
         drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+        if (ulineall || m->tagset[m->seltags] &
+                            1 << i) /* if there are conflicts, just move these lines directly
+                                       underneath both 'drw_setscheme' and 'drw_text' :) */
+            drw_rect(drw,
+                     x + ulinepad,
+                     bh - ulinestroke - ulinevoffset,
+                     w - (ulinepad * 2),
+                     ulinestroke,
+                     1,
+                     0);
         // drw_text(drw, x, 0, bh, bh, 0, "", urg & 1 << i);
         // if (occ & 1 << i)
         //    drw_rect(drw,
@@ -1573,8 +1585,9 @@ int gettextprop(Window w, Atom atom, char* text, unsigned int size) {
     if (!text || size == 0) return 0;
     text[0] = '\0';
     if (!XGetTextProperty(dpy, w, &name, atom) || !name.nitems) return 0;
-    if (name.encoding == XA_STRING)
+    if (name.encoding == XA_STRING) {
         strncpy(text, (char*)name.value, size - 1);
+    }
     else if (XmbTextPropertyToTextList(dpy, &name, &list, &n) >= Success && n > 0 && *list) {
         strncpy(text, *list, size - 1);
         XFreeStringList(list);
@@ -1824,11 +1837,12 @@ void manage(Window w, XWindowAttributes* wa) {
     XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
     configure(c); /* propagates border_width, if size doesn't change */
     updatewindowtype(c);
+    updatesizehints(c);
     updatewmhints(c);
     XSelectInput(
         dpy, w, EnterWindowMask | FocusChangeMask | PropertyChangeMask | StructureNotifyMask);
     grabbuttons(c, 0);
-    if (!c->isfloating) c->isfloating = c->oldstate = t || c->isfixed;
+    if (!c->isfloating) c->isfloating = c->oldstate = trans != None || c->isfixed;
     if (c->isfloating) XRaiseWindow(dpy, c->win);
     attachBelow(c);
     attachstack(c);
@@ -2567,7 +2581,7 @@ void setup(void) {
 
     signal(SIGHUP, sighup);
     signal(SIGTERM, sigterm);
-
+    putenv("_JAVA_AWT_WM_NONREPARENTING=1");
     /* init screen */
     screen = DefaultScreen(dpy);
     sw = DisplayWidth(dpy, screen);
