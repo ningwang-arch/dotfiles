@@ -59,9 +59,10 @@ st.termname: st-256color
 dwm.normbgcolor: #2E3440
 dwm.normbordercolor: #3B4252
 dwm.normfgcolor: #FAFAFA
-dwm.selfgcolor: #2E3440
+dwm.selfgcolor: #81A1C1
 dwm.selbordercolor: #B48EAD
-dwm.selbgcolor: #81A1C1
+dwm.selbgcolor: #2E3440
+
 
 dmenu.background: #2E3440
 dmenu.foreground: #FAFAFA

@@ -105,6 +105,16 @@ return {
       require("copilot_cmp").setup()
     end,
   },
+  ["andymass/vim-matchup"] = {
+    after = "nvim-treesitter",
+  },
+  ["gelguy/wilder.nvim"] = {
+    event = "CmdlineEnter",
+    config = function()
+      require("custom.plugins.wilder").setup()
+    end,
+    requires = { { "romgrk/fzy-lua-native", after = "wilder.nvim" } },
+  },
   ["folke/which-key.nvim"] = false,
   -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
 }

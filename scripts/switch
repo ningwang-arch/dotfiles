@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 if [ $1 == "l" ]; then
+	# Fcitx5
+	sed -i "s/Nord-Dark/Nord-Light/g" ~/.config/fcitx5/conf/classicui.conf
+	pkill fcitx5
 	cp ~/.onehalflight ~/.Xresources
 	xrdb merge ~/.Xresources && kill -USR1 $(pidof st)
 	pkill -1 dwm
@@ -10,7 +13,7 @@ if [ $1 == "l" ]; then
 	# Rofi
 	sed -i "s/dark/light/g" ~/.config/rofi/config.rasi
 	# Nvim
-	sed -i "s/onedark/one_light/g" ~/.config/nvim/lua/custom/chadrc.lua
+	sed -i "s/onedark/ayu-light/g" ~/.config/nvim/lua/custom/chadrc.lua
 	# Code
 	sed -i "s/Ayu Mirage/Eva Light/g" ~/.config/Code/User/settings.json
 	# Alacritty
@@ -24,6 +27,9 @@ if [ $1 == "l" ]; then
 	pkill dunst
 	notify-send "Light Mode" -i ~/.icons/nord.svg -t 3000
 elif [ $1 == "d" ]; then
+	# Fcitx5
+	sed -i "s/Nord-Light/Nord-Dark/g" ~/.config/fcitx5/conf/classicui.conf
+	pkill fcitx5
 	cp ~/.nord ~/.Xresources
 	xrdb merge ~/.Xresources && kill -USR1 $(pidof st)
 	pkill -1 dwm
@@ -33,7 +39,7 @@ elif [ $1 == "d" ]; then
 	# Rofi
 	sed -i "s/light/dark/g" ~/.config/rofi/config.rasi
 	# Nvim
-	sed -i "s/one_light/onedark/g" ~/.config/nvim/lua/custom/chadrc.lua
+	sed -i "s/ayu-light/onedark/g" ~/.config/nvim/lua/custom/chadrc.lua
 	# Code
 	sed -i "s/Eva Light/Ayu Mirage/g" ~/.config/Code/User/settings.json
 	# Alacritty
