@@ -197,6 +197,9 @@ static const char* translate[] = {"dmenu-translate", NULL};
 
 static const char* clip[] = {"clipmenu", NULL};
 static const char* layoutmenu_cmd = "~/.local/bin/layoutmenu.sh";
+
+#include "movestack.c"
+
 static const Key keys[] = {
     /* modifier                     key             function        argument */
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
@@ -222,9 +225,8 @@ static const Key keys[] = {
     {MODKEY, XK_h, hide, {0}},
     {MODKEY, XK_j, focusstackhid, {.i = +1}},
     {MODKEY, XK_k, focusstackhid, {.i = -1}},
-    {MODKEY | ShiftMask, XK_j, shiftviewclients, {.i = -1}},
-    {MODKEY | ShiftMask, XK_k, shiftviewclients, {.i = +1}},
-
+    {MODKEY | ShiftMask, XK_j, movestack, {.i = +1}},
+    {MODKEY | ShiftMask, XK_k, movestack, {.i = -1}},
 
     {MODKEY | ControlMask, XK_Return, zoom, {0}},
 

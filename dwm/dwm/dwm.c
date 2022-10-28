@@ -361,6 +361,7 @@ static void show(const Arg* arg);
 static void showwin(Client* c);
 static void showhide(Client* c);
 static void sigchld(int unused);
+static int solitary(Client* c);
 static void sighup(int unused);
 static void sigterm(int unused);
 static void spawn(const Arg* arg);
@@ -1223,15 +1224,6 @@ void drawbar(Monitor* m) {
                      ulinestroke,
                      1,
                      0);
-        // drw_text(drw, x, 0, bh, bh, 0, "", urg & 1 << i);
-        // if (occ & 1 << i)
-        //    drw_rect(drw,
-        //             x + boxw,
-        //             boxw,
-        //             boxw,
-        //             boxw,
-        //             m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-        //             urg & 1 << i);
         x += w;
     }
     w = TEXTW(m->ltsymbol);
@@ -1240,32 +1232,8 @@ void drawbar(Monitor* m) {
 
 
     if ((w = m->ww - tw - stw - x) > bh) {
-
-        //  if (n > 0) {
-        //      int remainder = w % n;
-        //      int tabw = (1.0 / (double)n) * w + 1;
-        //      for (c = m->clients; c; c = c->next) {
-        //          if (!ISVISIBLE(c)) continue;
-        //          if (m->sel == c)
-        //              scm = SchemeSel;
-        //          else if (HIDDEN(c))
-        //              scm = SchemeHid;
-        //          else
-        //              scm = SchemeNorm;
-        //          drw_setscheme(drw, scheme[scm]);
-
-        //          if (remainder >= 0) {
-        //              if (remainder == 0) { tabw--; }
-        //              remainder--;
-        //          }
-        //          drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
-        //          x += tabw;
-        //      }
-        //  }
-        //  else {
         drw_setscheme(drw, scheme[SchemeNorm]);
         drw_rect(drw, x, 0, w, bh, 1, 1);
-        // }
     }
 
     m->bt = n;
@@ -1424,7 +1392,11 @@ void focus(Client* c) {
             detachstack(c);
             attachstack(c);
             grabbuttons(c, 1);
-            XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
+            /* Avoid flickering when another client appears and the border
+             * is restored */
+            if (!solitary(c)) {
+                XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
+            }
             setfocus(c);
         }
     }
@@ -2131,6 +2103,13 @@ void resizeclient(Client* c, int x, int y, int w, int h) {
     c->h = wc.height = h - gapincr;
 
     wc.border_width = c->bw;
+
+    if (solitary(c)) {
+        c->w = wc.width += c->bw * 2;
+        c->h = wc.height += c->bw * 2;
+        wc.border_width = 0;
+    }
+
     if (ispanel(c)) c->y = c->oldy = c->bw = wc.y = wc.border_width = 0;
     XConfigureWindow(dpy, c->win, CWX | CWY | CWWidth | CWHeight | CWBorderWidth, &wc);
     configure(c);
@@ -2720,6 +2699,11 @@ void sigchld(int unused) {
     if (signal(SIGCHLD, sigchld) == SIG_ERR) die("can't install SIGCHLD handler:");
     while (0 < waitpid(-1, NULL, WNOHANG))
         ;
+}
+int solitary(Client* c) {
+    return ((nexttiled(c->mon->clients) == c && !nexttiled(c->next)) ||
+            &monocle == c->mon->lt[c->mon->sellt]->arrange) &&
+           !c->isfullscreen && !c->isfloating && NULL != c->mon->lt[c->mon->sellt]->arrange;
 }
 
 void sighup(int unused) {
