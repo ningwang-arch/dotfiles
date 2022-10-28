@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-  theme = "onedark",
+  theme = "ayu-light",
 }
 
 M.plugins = require "custom.plugins"

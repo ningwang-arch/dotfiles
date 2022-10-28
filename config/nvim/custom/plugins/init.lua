@@ -115,6 +115,12 @@ return {
     end,
     requires = { { "romgrk/fzy-lua-native", after = "wilder.nvim" } },
   },
+  ["RRethy/vim-illuminate"] = {
+    event = "BufReadPost",
+    config = function()
+      require("custom.plugins.illuminate").setup()
+    end,
+  },
   ["folke/which-key.nvim"] = false,
   -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
 }
