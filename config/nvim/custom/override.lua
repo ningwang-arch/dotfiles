@@ -18,6 +18,8 @@ M.treesitter = {
     "make",
     "cmake",
     "bash",
+    "rust",
+    "vue",
   },
 }
 M.nvimtree = {
@@ -57,6 +59,9 @@ M.mason = {
     "cmake-language-server",
     "lua-language-server",
     "lemminx",
+    "rust-analyzer",
+    "vue-language-server",
+    "css-lsp",
   },
 }
 

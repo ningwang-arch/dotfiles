@@ -1,10 +1,11 @@
 local M = {}
 
 M.ui = {
-  theme = "ayu-light",
+  theme = "onedark",
+  theme_toggle = { "onedark", "ayu_light" },
 }
 
-M.plugins = require "custom.plugins"
+M.plugins = "custom.plugins"
 
 M.mappings = require "custom.mappings"
 

@@ -6,3 +6,7 @@
 -- MAPPINGS
 
 -- NOTE: the 4th argument in the map function can be a table i.e options but its most likely un-needed so dont worry about it
+--
+local g = vim.g
+
+g.base46_cache = vim.fn.stdpath "config" .. "/nvchad/base46/"
