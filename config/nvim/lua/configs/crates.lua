@@ -85,5 +85,5 @@ return function()
   }
 
   -- Set buffer-local keymaps
-  require "custom.configs.crates-keymap"
+  require "configs.crates-keymap"
 end

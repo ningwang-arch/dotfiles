@@ -3,8 +3,7 @@ local b = null_ls.builtins
 
 local sources = {
 
-  b.formatting.prettierd.with { filetypes = { "html", "markdown", "css" } },
-  b.formatting.deno_fmt,
+  -- b.formatting.deno_fmt,
 
   -- Lua
   b.formatting.stylua,
@@ -13,12 +12,24 @@ local sources = {
   b.formatting.shfmt,
 
   -- cxx
-  b.formatting.clang_format.with { extra_args = { "-style", "file" } },
+  b.formatting.clang_format.with {
+    filetypes = { "c", "cpp" },
+    extra_args = { "-style", "file" },
+  },
   b.diagnostics.cppcheck,
 
   -- python
-  b.formatting.autopep8,
-  b.diagnostics.flake8,
+  b.formatting.black,
+  b.formatting.isort,
+  b.diagnostics.pylint,
+
+  -- cmake
+  b.formatting.cmake_format,
+
+  -- rust
+  b.formatting.rustfmt,
+
+  b.formatting.prettier,
 }
 
 local M = {}
