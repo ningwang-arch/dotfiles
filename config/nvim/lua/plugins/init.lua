@@ -97,18 +97,18 @@ return {
           height = 0.85, -- height of the Zen window
           width = 0.85,
           options = {
-            signcolumn = "no", -- disable signcolumn
-            number = false, -- disable number column
+            signcolumn = "no",      -- disable signcolumn
+            number = false,         -- disable number column
             relativenumber = false, -- disable relative numbers
-            cursorline = false, -- disable cursorline
-            cursorcolumn = false, -- disable cursor column
-            foldcolumn = "0", -- disable fold column
-            list = false, -- disable whitespace characters
+            cursorline = false,     -- disable cursorline
+            cursorcolumn = false,   -- disable cursor column
+            foldcolumn = "0",       -- disable fold column
+            list = false,           -- disable whitespace characters
           },
         },
         plugins = {
           gitsigns = { enabled = false }, -- disables git signs
-          tmux = { enabled = false }, -- disables the tmux statusline
+          tmux = { enabled = false },     -- disables the tmux statusline
           twilight = { enabled = false }, -- disables the twilight plugin
         },
         on_open = function()
@@ -134,9 +134,9 @@ return {
           -- we try to get the foreground from the highlight groups or fallback color
           color = { "Normal", "#ffffff" },
         },
-        context = 10, -- amount of lines we will try to show around the current line
+        context = 10,      -- amount of lines we will try to show around the current line
         treesitter = true, -- use treesitter when available for the filetype
-        -- treesitter is used to automatically expand the visible text, 
+        -- treesitter is used to automatically expand the visible text,
         -- but you can further control the types of nodes that should always be fully expanded
         expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
           "function",
@@ -148,7 +148,7 @@ return {
       }
     end,
   },
-    {
+  {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     config = require "configs.rust-tools",
@@ -186,21 +186,21 @@ return {
   },
   --
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-      ensure_installed = {
-        "clangd",
-        "jedi-language-server",
-        "cmake-language-server",
-        "lua-language-server",
-        "rust-analyzer",
-      },
-  	},
+    "williamboman/mason.nvim",
+    -- opts = {
+    --    ensure_installed = {
+    --      "clangd",
+    --      "jedi-language-server",
+    --      "cmake-language-server",
+    --      "lua-language-server",
+    --      "rust-analyzer",
+    --    },
+    -- },
   },
   --
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
       ensure_installed = {
         "lua",
         "vim",
@@ -219,7 +219,7 @@ return {
         "rust",
         "vue",
       },
-  	},
+    },
     dependencies = {
       { "mrjones2014/nvim-ts-rainbow" },
       { "andymass/vim-matchup" },
@@ -243,12 +243,12 @@ return {
         "abecodes/tabout.nvim",
         config = function()
           require("tabout").setup {
-            tabkey = "", -- key to trigger tabout, set to an empty string to disable
-            backwards_tabkey = "", -- key to trigger backwards tabout, set to an empty string to disable
-            act_as_tab = true, -- shift content if tab out is not possible
+            tabkey = "",              -- key to trigger tabout, set to an empty string to disable
+            backwards_tabkey = "",    -- key to trigger backwards tabout, set to an empty string to disable
+            act_as_tab = true,        -- shift content if tab out is not possible
             act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
             enable_backwards = true,
-            completion = true, -- if the tabkey is used in a completion pum
+            completion = true,        -- if the tabkey is used in a completion pum
             tabouts = {
               { open = "'", close = "'" },
               { open = '"', close = '"' },
@@ -258,7 +258,7 @@ return {
               { open = "{", close = "}" },
             },
             ignore_beginning = true, -- if the cursor is at the beginning of a filled element it will rather tab out than shift the content
-            exclude = {}, -- tabout will ignore these filetypes
+            exclude = {},            -- tabout will ignore these filetypes
           }
         end,
       },
